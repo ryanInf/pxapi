@@ -1,0 +1,38 @@
+<html>
+<title>HTTP 可用代理</title>
+<script type="text/Javascript">
+        function update()
+            {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                        location.reload()
+                    }
+                    else if (xmlhttp.readyState==4 && xmlhttp.status==400)                         
+                    {
+                        alert('请3分钟后重试')
+                    }
+                }
+                xmlhttp.open("GET","/api/updateproxyip",true);
+                xmlhttp.send();
+            }
+    </script>
+
+<body>
+    共： {{total}} 条 <br>
+    {% for addr in msg %} {{addr}}
+    <br> {% endfor %}
+</body>
+<button type="button" onclick="update()">更新代理IP列表</button>
+
+</html>
