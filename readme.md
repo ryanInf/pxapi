@@ -1,5 +1,5 @@
 ### 简介
-一个简易的HTTP代理列表更新API，基于Flask  
+一个简易的HTTP代理列表更新API，基于Flask，代理列表来源于各个免费代理网站  
 ### 安装依赖 
 pip install -r require.txt
 ### 模块
