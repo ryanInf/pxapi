@@ -55,11 +55,10 @@ def index():
     return render_template('index.html', msg=msg, total=total, ip=ip), 200
 
 
-static', filename='favicon.ico'))
 api.add_resource(UpdateProxyIP, '/api/updateproxyip')
 
 if __name__ == '__main__':
-    t=getProxyIP.Thread(target=updatetime)
+    t = getProxyIP.Thread(target=updatetime)
     t.start()
     app.run(host='127.0.0.1', port=9999, threaded=True)
     # app.run(host='127.0.0.1', port=9999, debug=True, threaded=True)
