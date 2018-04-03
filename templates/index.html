@@ -1,5 +1,6 @@
 <html>
 <title>HTTP 可用代理</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <script type="text/Javascript">
         function update()
             {
@@ -29,7 +30,8 @@
     </script>
 
 <body>
-    共： {{total}} 条 <br>
+    您的IP地址是：{{ip}} <br>
+    目前可用代理共： {{total}} 条 <br>
     {% for addr in msg %} {{addr}}
     <br> {% endfor %}
 </body>

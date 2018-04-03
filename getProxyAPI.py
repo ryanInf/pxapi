@@ -11,7 +11,7 @@
 # #------------------------------------------
 # #
 ###
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 from flask_restful import Api, Resource
 import getProxyIP
 
@@ -51,13 +51,15 @@ def index():
     with open('proxyvivdip.json', encoding='utf-8') as f:
         msg = getProxyIP.json.load(f)
     total = len(msg)
-    return render_template('index.html', msg=msg, total=total), 200
+    ip = request.remote_addr
+    return render_template('index.html', msg=msg, total=total, ip=ip), 200
 
 
+static', filename='favicon.ico'))
 api.add_resource(UpdateProxyIP, '/api/updateproxyip')
 
 if __name__ == '__main__':
-    t = getProxyIP.Thread(target=updatetime)
+    t=getProxyIP.Thread(target=updatetime)
     t.start()
     app.run(host='127.0.0.1', port=9999, threaded=True)
     # app.run(host='127.0.0.1', port=9999, debug=True, threaded=True)
