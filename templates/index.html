@@ -30,9 +30,15 @@
     </script>
 
 <body>
-    您的IP地址是：{{ip}} <br>
-    目前可用代理共： {{total}} 条 <br>
-    {% for addr in msg %} {{addr}}
+
+    <div id="T1" style="border:1px solid black;height:20;width:400;padding:5">
+        <script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script>
+    </div>
+    <script>
+        var temp = eval("(" + document.getElementById("T1").innerText + ")");
+        document.getElementById("T1").innerText = "您的IP：" + temp['ip'] + "，归属地：" + temp['address'];
+    </script> 目前可用代理共： {{total}} 条
+    <br> {% for addr in msg %} {{addr}}
     <br> {% endfor %}
 </body>
 <button type="button" onclick="update()">更新代理IP列表</button>

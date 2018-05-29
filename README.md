@@ -8,6 +8,9 @@ getProxyAPI.py　　API接口，显示可用IP列表，并提供更新列表接�
 updateip.py　　更新从各站点爬取的代理IP列表（未测试可用性），可通过手动添加系统定时任务刷新IP列表  
 proxy.json　　代理IP列表（未检测）文件，getProxyIP.py读取此文件刷新可用代理IP列表  
 proxyvivdip.json  可用代理IP列表，通过getProxyAPI.py接口请求产生并读取  
+### 使用方法 
+python3 updateip.py 更新代理IP列表文件（可选操作）
+python3 getProxyAPI.py  启动API接口
 ### 自定义配置
 1. 修改API监听地址：  
 ```python

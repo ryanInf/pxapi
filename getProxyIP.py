@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-###
-# #      Created Date: Mon Mar 19 2018
+# #      Created Date: Tue May 29 2018
 # #      Author: Ryan
-# #      mail: ryan.netx@outlook.com
+# #      mail: ryaninf@outlook.com
 # #      Last Modified:
 # #      Modified By:
 # #------------------------------------------
@@ -148,24 +147,13 @@ def getVIVDPX(filename):
     return pxiplist
 
 
-# print(getVIVDPX('proxy.json'))
-# checkPXIP('127.0.0.1:1080')
-# getIPFromXD() 1000
-# saveuncheckip()
-# pxiplist = getVIVDPX('proxy.json')
-# print(pxiplist)
-# getHTML('http://www.66ip.cn/nmtq.php?getnum=300&isp=0&anonymoustype=0&start=&ports=&export=&ipaddress=&area=1&proxytype=0&api=66ip')
-# getIPFromKD() 150
-# getIPFrom66() 193
-
-
 if __name__ == '__main__':
     # 从各个网站更新IP地址，可选操作
-    # getIPFrom66()
-    # getIPFromKD()
-    # getIPFromXD()
-    # saveuncheckip()
+    getIPFrom66()
+    getIPFromKD()
+    getIPFromXD()
+    saveuncheckip()
     # print(len(unchkiplist))
     # 检测IP地址可用性，输出可用IP
-    pxiplist = getVIVDPX('proxy.json')
-    print(len(pxiplist), pxiplist)
+    # pxiplist = getVIVDPX('proxy.json')
+    # print(len(pxiplist), pxiplist)
